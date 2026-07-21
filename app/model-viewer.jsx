@@ -3,14 +3,19 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Center, ContactShadows, OrbitControls, useAnimations, useGLTF } from "@react-three/drei";
 import { Suspense, useEffect, useMemo, useRef } from "react";
-import { BoxHelper, LoopRepeat } from "three";
+import { AnimationClip, BoxHelper, LoopRepeat } from "three";
 
 function Station({ url, playing, speed, fault, replay, scrubbing, highlightName, onComponentClick }) {
   const { scene: loadedScene, animations } = useGLTF(url);
   const scene = useMemo(() => loadedScene.clone(true), [loadedScene]);
+  const synchronizedAnimations = useMemo(() => {
+    if (animations.length <= 1) return animations;
+    const tracks = animations.flatMap((clip) => clip.tracks.map((track) => track.clone()));
+    return [new AnimationClip("Synchronized station cycle", -1, tracks)];
+  }, [animations]);
   const group = useRef();
   const highlightHelper = useRef();
-  const { actions } = useAnimations(animations, group);
+  const { actions } = useAnimations(synchronizedAnimations, group);
 
   useEffect(() => () => {
     if (!highlightHelper.current) return;

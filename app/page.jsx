@@ -49,7 +49,7 @@ const solutions = [
     kicker: "CONTACT / RETROFIT",
     name: "Rolling LVDT indexer",
     type: "Controlled peak tracking",
-    source: "/models/rolling_lvdt_indexer.glb",
+    source: "/models/rolling_lvdt_indexer.glb?v=system2-synchronized-v2",
     blendSource: "/models/system_03_arduino_hid_indexer.blend",
     accent: "#b79cff",
     accentSoft: "rgba(183,156,255,.17)",
