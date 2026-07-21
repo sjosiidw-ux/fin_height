@@ -8,7 +8,7 @@ import math
 import os
 from mathutils import Vector
 
-SOURCE = r"C:\Users\mrunmai khumkar\Documents\Codex\2026-07-13\computer-plugin-computer-use-openai-bundled\outputs\industrial_radiator_fin_inspection.blend"
+SOURCE = r"C:\Users\mrunmai khumkar\Documents\Codex\2026-07-13\computer-plugin-computer-use-openai-bundled\outputs\industrial_radiator_fin_inspection_hollow.blend"
 OUT = r"C:\Users\mrunmai khumkar\Documents\mahle\public\models"
 
 def material(name, color, metallic=0.0, rough=.35, emission=None):

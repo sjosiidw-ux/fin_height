@@ -1,3 +1,10 @@
 node_modules/
 .next/
+out/
+dist/
 .DS_Store
+tmp/
+*.blend1
+models/*backup.blend
+blender/_*.log
+blender/_*.py
