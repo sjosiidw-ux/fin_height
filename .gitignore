@@ -8,3 +8,5 @@ tmp/
 models/*backup.blend
 blender/_*.log
 blender/_*.py
+
+.vercel
